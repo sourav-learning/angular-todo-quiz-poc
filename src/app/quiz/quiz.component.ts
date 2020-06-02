@@ -49,4 +49,15 @@ export class QuizComponent implements OnInit {
     }
   }
 
+  submitExamPaper(){
+
+    if(this.quizService.qnProgress+1 == this.numberOfQuestions){
+      console.log("All questions answered");
+      clearInterval(this.quizService.timer);
+      this.router.navigate(['/result']);
+    } else {
+      this.router.navigate(['/error']);
+    }
+  }
+
 }

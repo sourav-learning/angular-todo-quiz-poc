@@ -27,7 +27,7 @@
   </div>
 </div>
 <div class="btn-space-custom">
-  <button type="button" class="btn btn-space-custom btn-primary">Submit</button>
+  <button type="button" class="btn btn-space-custom btn-primary" (click)="submitExamPaper()">Submit</button>
 
-  <button type="button" class="btn btn-primary btn-space-custom" (click)="showNext()">Next</button>
+  <button type="button" *ngIf="quizService.qnProgress + 1 != numberOfQuestions" class="btn btn-primary btn-space-custom" (click)="showNext()">Next</button>
 </div>

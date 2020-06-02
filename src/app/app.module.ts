@@ -8,6 +8,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ResultComponent } from './result/result.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -18,7 +19,8 @@ import { ResultComponent } from './result/result.component';
     QuizComponent,
     HomeComponent,
     HeaderComponent,
-    ResultComponent
+    ResultComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
