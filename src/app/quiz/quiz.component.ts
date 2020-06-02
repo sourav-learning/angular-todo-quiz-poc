@@ -10,30 +10,7 @@ import { QuizService } from '../quiz.service';
 export class QuizComponent implements OnInit {
 
   numberOfQuestions : number;
-   data =  [
-    {
-      id: 1,
-      question: 'What is the capital of India?',
-      options: ['New Delhi', 'Kolkata', 'Chennai', 'Mumbai'],
-      answer: "",
-      correctAnswer: 0
-    },
-    {
-      id: 2,
-      question: 'What is the capital of West Bengal?',
-      options: ['New Delhi', 'Kolkata', 'Chennai', 'Mumbai'],
-      answer: "",
-      correctAnswer: 1
-    },
-    {
-      id: 3,
-      question: 'Sun rises in the east',
-      options: ['True', 'False'],
-      answer: "",
-      correctAnswer: 0
-    }
-
-  ]
+  data: any[];
 
   constructor(private router:Router, private quizService:QuizService) { }
 
@@ -42,7 +19,7 @@ export class QuizComponent implements OnInit {
     this.quizService.seconds = 0;
     
 
-    //console.log(this.data);
+    this.data = this.quizService.getQuestions();
     this.quizService.qns = this.data;
     this.numberOfQuestions = this.data.length;
     console.log(this.numberOfQuestions);
@@ -59,6 +36,11 @@ export class QuizComponent implements OnInit {
   myChoice(id, choice){
     console.log(id, choice);
     this.quizService.qns[this.quizService.qnProgress].answer= choice;
+    
+    
+  }
+
+  showNext(){
     this.quizService.qnProgress++;
     if(this.quizService.qnProgress == this.numberOfQuestions){
       console.log("All questions answered");

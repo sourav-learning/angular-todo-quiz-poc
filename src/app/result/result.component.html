@@ -1,3 +1,29 @@
-<p>
-  result works!
-</p>
+<table class="striped">
+  <thead>
+    <th>Question #</th>
+    <th>Question</th>
+    <th>Your Answer</th>
+    <th>Comment</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let answer of result">
+      <td>
+        {{answer.id}}
+      </td>
+      <td>
+        {{answer.question}}
+      </td>
+      <td>
+        {{answer.answer}}
+      </td>
+      <td>
+        
+        <div *ngIf="(answer.answer ==  answer.correctAnswer); then thenBlock else elseBlock"></div>
+        <ng-template green #thenBlock><i class="material-icons">check</i> </ng-template>
+        <ng-template #elseBlock><i class="material-icons">close</i> <span class="red-text text-darken-2">Correct answer is : {{answer.correctAnswer}}</span></ng-template>
+          
+       
+      </td>
+    </tr>
+  </tbody>
+</table>

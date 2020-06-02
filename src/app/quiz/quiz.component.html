@@ -1,10 +1,9 @@
-<app-header></app-header>
 
 <div class="row" *ngIf="quizService.qns">
   <div class="col s8 offset-s2">
     <span>Time Elapsed : {{quizService.displayTimeElapsed()}}</span>
     <div class="progress">
-      <div class="determinate" [style.width.%]="(quizService.qnProgress+1)*10"></div>
+      <div class="determinate" [style.width.%]="(quizService.qnProgress+1)*100/numberOfQuestions"></div>
   </div>
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
@@ -13,10 +12,12 @@
       </div>
       <div class="card-action">
         <ul class="collection answer">
-            <ng-container *ngFor="let option of quizService.qns[quizService.qnProgress].options;let i = index">
-                <li *ngIf="option != null" class="collection-item" (click)="myChoice(quizService.qns[quizService.qnProgress].id,i)"> 
-                    {{option}}
-
+            <ng-container *ngFor="let option of quizService.qns[quizService.qnProgress].options">
+                <li *ngIf="option != null" (click)="myChoice(quizService.qns[quizService.qnProgress].id,option)"> 
+                    <button type="button" class="list-group-item list-group-item-action ">
+                      {{option}}
+                    </button>
+                  
                 </li>
 
             </ng-container>
@@ -24,4 +25,9 @@
       </div>
     </div>
   </div>
+</div>
+<div class="btn-space-custom">
+  <button type="button" class="btn btn-space-custom btn-primary">Submit</button>
+
+  <button type="button" class="btn btn-primary btn-space-custom" (click)="showNext()">Next</button>
 </div>
