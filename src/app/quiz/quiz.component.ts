@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuizService } from '../quiz.service';
+import * as questionsFromJson from './data/quiz-gen.json'
 
 @Component({
   selector: 'app-quiz',
@@ -18,8 +19,9 @@ export class QuizComponent implements OnInit {
     this.quizService.qnProgress = 0;
     this.quizService.seconds = 0;
     
-
-    this.data = this.quizService.getQuestions();
+    console.log(questionsFromJson);
+    this.data = questionsFromJson.questions;
+   // this.data = this.quizService.getQuestions();
     this.quizService.qns = this.data;
     this.numberOfQuestions = this.data.length;
     console.log(this.numberOfQuestions);
@@ -31,6 +33,7 @@ export class QuizComponent implements OnInit {
     this.quizService.timer = setInterval(()=> {
       this.quizService.seconds++;
     },1000);
+    
   }
 
   myChoice(id, choice){
@@ -42,11 +45,7 @@ export class QuizComponent implements OnInit {
 
   showNext(){
     this.quizService.qnProgress++;
-    if(this.quizService.qnProgress == this.numberOfQuestions){
-      console.log("All questions answered");
-      clearInterval(this.quizService.timer);
-      this.router.navigate(['/result']);
-    }
+    
   }
 
   submitExamPaper(){
@@ -58,6 +57,17 @@ export class QuizComponent implements OnInit {
     } else {
       this.router.navigate(['/error']);
     }
+ 
+  }
+
+  checkTime(){
+    //console.log(this.quizService.seconds);
+   if(this.quizService.seconds == 30){
+      clearInterval(this.quizService.timer);
+      this.router.navigate(['/result']);
+     
+    }
+
   }
 
 }

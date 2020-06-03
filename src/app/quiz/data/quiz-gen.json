@@ -1,0 +1,51 @@
+{"questions": [
+    {
+        "id": 1,
+        "question": "How many colours are there in a rainbow?",
+        "options": [
+            "4", "5", "6", "7"
+        ],
+        "answer": "",
+        "correctAnswer": "7"
+    },
+    {
+        "id": 2,
+        "question": "What is the capital of Maharashtra?",
+        "options": ["New Delhi", "Kolkata", "Chennai", "Mumbai"],
+        "answer": "",
+        "correctAnswer": "Mumbai"
+    },
+    {
+        "id": 3,
+        "question": "What is the capital of West Bengal?",
+        "options": ["New Delhi", "Kolkata", "Chennai", "Mumbai"],
+        "answer": "",
+        "correctAnswer": "Kolkata"
+    },
+    {
+        "id": 4,
+        "question": "What is the capital of India?",
+        "options": ["New Delhi", "Kolkata", "Chennai", "Mumbai"],
+        "answer": "",
+        "correctAnswer": "New Delhi"
+    },
+    {
+        "id": 5,
+        "question": "How many days are there in a week?",
+        "options": [
+            "4", "5", "6", "7"
+        ],
+        "answer": "",
+        "correctAnswer": "7"
+    },
+    {
+        "id": 6,
+        "question": "How many months are there in a year?",
+        "options": [
+            "8", "5", "12", "10"
+        ],
+        "answer": "",
+        "correctAnswer": "12"
+    }
+    ]
+}

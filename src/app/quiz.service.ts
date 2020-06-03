@@ -10,7 +10,7 @@ export class QuizService {
   timer: any;
   qnProgress: number;
 
-  data =  [
+  /*data =  [
     {
       id: 1,
       question: 'What is the capital of India?',
@@ -40,16 +40,19 @@ export class QuizService {
       correctAnswer: "7"
     }
 
-  ]
+  ]*/
 
 
   constructor() { }
 
   displayTimeElapsed(){
+    
     return Math.floor(this.seconds / 3600) + ':' + Math.floor(this.seconds / 60) + ':' + Math.floor(this.seconds % 60);
   }
 
-  getQuestions(){
+  
+
+  /*getQuestions(){
     return this.data;
-  }
+  }*/
 }

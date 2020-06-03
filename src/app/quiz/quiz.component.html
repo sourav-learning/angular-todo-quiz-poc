@@ -2,6 +2,7 @@
 <div class="row" *ngIf="quizService.qns">
   <div class="col s8 offset-s2">
     <span>Time Elapsed : {{quizService.displayTimeElapsed()}}</span>
+   
     <div class="progress">
       <div class="determinate" [style.width.%]="(quizService.qnProgress+1)*100/numberOfQuestions"></div>
   </div>
@@ -31,3 +32,4 @@
 
   <button type="button" *ngIf="quizService.qnProgress + 1 != numberOfQuestions" class="btn btn-primary btn-space-custom" (click)="showNext()">Next</button>
 </div>
+{{checkTime()}}
